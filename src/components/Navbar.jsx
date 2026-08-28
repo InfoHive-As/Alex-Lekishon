@@ -43,7 +43,7 @@ export default function Navbar({ theme, toggleTheme }) {
           </a>
           <div className="logo-text">
             <span>{personalInfo.name}</span>
-            <span>PR & Grants Specialist</span>
+            <span>Comm's, PR & Grants Specialist</span>
           </div>
         </div>
 

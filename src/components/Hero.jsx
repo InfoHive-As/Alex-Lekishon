@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Linkedin, Globe, Copy, MapPin, Award } from 'lucide-react';
-import { personalInfo, statsData } from '../data/portfolioData';
+import { personalInfo } from '../data/portfolioData';
 
 export default function Hero({ onCopyEmail }) {
   return (
@@ -42,16 +42,6 @@ export default function Hero({ onCopyEmail }) {
         >
           <Copy size={16} /> Copy Email
         </button>
-      </div>
-
-      <div className="stats-grid">
-        {statsData.map((stat, idx) => (
-          <div key={idx} className="stat-card">
-            <div className="stat-value">{stat.value}</div>
-            <div className="stat-label">{stat.label}</div>
-            <div className="stat-desc">{stat.desc}</div>
-          </div>
-        ))}
       </div>
     </section>
   );
