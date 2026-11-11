@@ -256,26 +256,119 @@
       border-top: 1px solid #f1f5f9;
     }
 
+    @page {
+      size: A4 portrait;
+      margin: 5mm 8mm;
+    }
+
     @media print {
-      body { background: white; padding: 0; }
-      .toolbar { display: none; }
+      body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
       .doc-page {
-        box-shadow: none;
-        border-radius: 0;
-        padding: 24px 20px;
-        margin: 0;
-        page-break-after: always;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+      .doc-page:last-of-type {
+        page-break-after: auto !important;
+        break-after: auto !important;
+      }
+      .running-header {
+        margin-bottom: 4px !important;
+        padding-bottom: 2px !important;
+        font-size: 0.67rem !important;
+      }
+      .doc-main-title {
+        font-size: 1.05rem !important;
+        margin-bottom: 1px !important;
+      }
+      .doc-link-line {
+        font-size: 0.72rem !important;
+        margin-bottom: 2px !important;
+      }
+      .category-pills-bar {
+        font-size: 0.66rem !important;
+        margin-bottom: 3px !important;
+      }
+      .author-name {
+        font-size: 1.25rem !important;
+        margin-bottom: 1px !important;
+      }
+      .author-tagline {
+        font-size: 0.72rem !important;
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
+      }
+      .stats-container {
+        gap: 6px !important;
+        margin-bottom: 5px !important;
+      }
+      .stat-card {
+        padding: 3px 6px !important;
+        background: #f0fdfa !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .stat-number {
+        font-size: 1.1rem !important;
+        margin-bottom: 1px !important;
+      }
+      .stat-desc {
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+      }
+      .section-title {
+        font-size: 0.92rem !important;
+        margin-bottom: 1px !important;
+      }
+      .section-subtitle {
+        font-size: 0.66rem !important;
+        margin-bottom: 2px !important;
+      }
+      .intro-paragraph {
+        font-size: 0.68rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 4px !important;
+      }
+      .portfolio-table {
+        margin-bottom: 4px !important;
+        font-size: 0.66rem !important;
       }
       .portfolio-table th {
         background: #0f172a !important;
         color: white !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+        padding: 3px 5px !important;
+        font-size: 0.63rem !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
-      .stat-card {
-        background: #f0fdfa !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+      .portfolio-table td {
+        padding: 3px 5px !important;
+        line-height: 1.18 !important;
+      }
+      .col-ref span.num {
+        font-size: 0.82rem !important;
+      }
+      .col-sample ul {
+        margin-left: 10px !important;
+        margin-top: 1px !important;
+      }
+      .col-sample li {
+        margin-bottom: 1px !important;
+      }
+      .running-footer {
+        margin-top: 4px !important;
+        padding-top: 2px !important;
+        font-size: 0.63rem !important;
       }
     }
   </style>
