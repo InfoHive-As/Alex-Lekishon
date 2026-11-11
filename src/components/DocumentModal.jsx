@@ -557,15 +557,27 @@ export default function DocumentModal({ initiative, onClose, onShowToast }) {
 
                         <div className="doc-item-actions">
                           {doc.fileUrl?.includes('docs.google.com') ? (
-                            <a
-                              className="doc-action-btn primary"
-                              href={doc.fileUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              title="Open official Google Doc in new window"
-                            >
-                              <ExternalLink size={15} /> Open Google Doc
-                            </a>
+                            <>
+                              <a
+                                className="doc-action-btn primary"
+                                href={doc.fileUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="Open official Google Doc in new window"
+                              >
+                                <ExternalLink size={15} /> Open Google Doc
+                              </a>
+                              {doc.downloadUrl && (
+                                <button
+                                  type="button"
+                                  className="doc-action-btn secondary"
+                                  onClick={() => handleOpenReader(doc)}
+                                  title="View Complete Report PDF"
+                                >
+                                  <Eye size={15} /> View Full PDF
+                                </button>
+                              )}
+                            </>
                           ) : (doc.isExternal || doc.fileUrl?.startsWith('http')) ? (
                             <a
                               className="doc-action-btn primary"
@@ -577,48 +589,26 @@ export default function DocumentModal({ initiative, onClose, onShowToast }) {
                               <ExternalLink size={15} /> Open Live Report
                             </a>
                           ) : (
-                            <button
-                              type="button"
-                              className="doc-action-btn primary"
-                              onClick={() => handleOpenReader(doc)}
-                              title="Read / Preview Report"
-                            >
-                              <Eye size={15} /> Read / Preview
-                            </button>
-                          )}
-
-                          <button
-                            type="button"
-                            className="doc-action-btn secondary"
-                            onClick={() => handleOpenReader(doc)}
-                            title="In-App Preview"
-                          >
-                            <Eye size={15} /> Preview
-                          </button>
-
-                          {(!doc.isExternal && !doc.fileUrl?.startsWith('http')) && (
-                            <a
-                              className="doc-action-btn ghost"
-                              href={doc.downloadUrl || doc.fileUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              download
-                              title="Download document"
-                            >
-                              <Download size={15} />
-                            </a>
-                          )}
-
-                          {doc.googleDocUrl && (
-                            <a
-                              className="doc-action-btn ghost"
-                              href={doc.googleDocUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              title="Open in Google Docs"
-                            >
-                              <ExternalLink size={14} /> Google Doc
-                            </a>
+                            <>
+                              <button
+                                type="button"
+                                className="doc-action-btn primary"
+                                onClick={() => handleOpenReader(doc)}
+                                title="Read Complete Report PDF"
+                              >
+                                <Eye size={15} /> Read Full PDF
+                              </button>
+                              <a
+                                className="doc-action-btn secondary"
+                                href={doc.downloadUrl || doc.fileUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download
+                                title="Download PDF document"
+                              >
+                                <Download size={15} /> Download PDF
+                              </a>
+                            </>
                           )}
 
                           {doc.isCustom && (

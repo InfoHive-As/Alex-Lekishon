@@ -128,7 +128,7 @@ export const educationData = [
     specialization: "Corporate Communications",
     institution: "Mount Kenya University (MKU) Main Campus",
     period: "2025–2026",
-    status: "Data Collection Phase Ongoing",
+    status: "Awaiting Graduation",
     details: 'Thesis: "Community Perceptions of Climate Change Communication: A Case of Maasai Mara Conservancies, Narok County, Kenya."'
   },
   {
@@ -277,20 +277,6 @@ export const initiativesData = [
         fileUrl: "/reports/CI-GEF_Project_Annual_Workplan_FY27Q1.pdf",
         downloadUrl: "/reports/CI-GEF_Project_Annual_Workplan_FY27Q1.pdf",
         tags: ["CI-GEF", "Annual Workplan", "EarthRanger", "Safeguards"]
-      },
-      {
-        id: "lca-eco-monitoring-march-gov",
-        title: "LCA Ecological Monitoring During the Month of March",
-        category: "Conservation Reporting & Storytelling",
-        period: "March 2024",
-        format: "Field Story & Report",
-        size: "Online Feature",
-        featured: false,
-        summary: "Field conservation story and telemetry synthesis tracking pasture recovery, wildlife corridor health, and rainy season ecological indicators across member conservancies.",
-        fileUrl: "https://www.laikipiaconservancies.org/post/lca-ecological-monitoring-during-the-month-of-march",
-        downloadUrl: "https://www.laikipiaconservancies.org/post/lca-ecological-monitoring-during-the-month-of-march",
-        isExternal: true,
-        tags: ["Ecological Monitoring", "Field Story", "Conservation Reporting"]
       }
     ]
   },
@@ -387,20 +373,6 @@ export const initiativesData = [
         downloadUrl: "https://www.laikipiaconservancies.org/post/lca-ecological-monitoring-during-the-month-of-march",
         isExternal: true,
         tags: ["Ecological Monitoring", "Field Story", "Conservation Reporting"]
-      },
-      {
-        id: "lca-gef8-gwp",
-        title: "GEF-8 Global Wildlife Program (GWP) Kenya Child Project",
-        category: "Digital Communications & Conservation Storytelling",
-        period: "2024",
-        format: "Project Feature & Story",
-        size: "Official Feature",
-        featured: true,
-        summary: "Strategic communication narrative and project overview for the Global Environment Facility (GEF-8) $3M+ Kenya Child Project under the Global Wildlife Program.",
-        fileUrl: "https://www.laikipiaconservancies.org/post/gef-8-global-wildlife-program-gwp-kenya-child-project",
-        downloadUrl: "https://www.laikipiaconservancies.org/post/gef-8-global-wildlife-program-gwp-kenya-child-project",
-        isExternal: true,
-        tags: ["GEF-8", "Global Wildlife Program", "Digital Communications"]
       }
     ]
   },
