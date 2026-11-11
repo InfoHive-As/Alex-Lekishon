@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEF-8 Q1 Progress Report — Ministry of Tourism and Wildlife (SDW)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gov-gold: #b45309;
+      --gov-green: #065f46;
+      --gov-dark: #0f172a;
+      --gov-light: #f8fafc;
+      --border: #cbd5e1;
+      --border-subtle: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      background: #f1f5f9;
+      line-height: 1.6;
+      padding: 30px 16px;
+    }
+    .gov-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .gov-top-bar {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 10px 32px;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #b45309;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .gov-header {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      padding: 36px 32px 28px;
+      text-align: center;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    .emblem-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: #475569;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .ministry-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .dept-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gov-green);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .report-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0369a1;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .report-subtitle {
+      font-size: 0.95rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .gov-toolbar {
+      background: #e0f2fe;
+      border-bottom: 1px solid #bae6fd;
+      padding: 12px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      background: #0369a1;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover { background: #075985; }
+    .btn-secondary {
+      background: white;
+      color: #0f172a;
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: #f8fafc; }
+    .gov-body { padding: 32px; }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid var(--gov-green);
+      padding-bottom: 6px;
+      margin: 32px 0 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .section-title:first-of-type { margin-top: 0; }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+    }
+    .info-table th, .info-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .info-table th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #334155;
+      width: 28%;
+    }
+    .badge-amber {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.82rem;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+    .stat-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      border-top: 3px solid #0284c7;
+    }
+    .stat-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #0369a1;
+    }
+    .stat-lbl {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 0.86rem;
+    }
+    .matrix-table th, .matrix-table td {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+    }
+    .matrix-table th {
+      background: #0f172a;
+      color: white;
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+    .status-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .status-on-track { background: #dcfce7; color: #166534; }
+    .status-in-progress { background: #e0f2fe; color: #075985; }
+    .status-pending { background: #fef3c7; color: #92400e; }
+    .gov-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      padding: 20px 32px;
+      font-size: 0.82rem;
+      color: #64748b;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .gov-container { box-shadow: none; border: none; }
+      .gov-toolbar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gov-container">
+    <div class="gov-top-bar">
+      <span>Republic of Kenya · Official M&E Document</span>
+      <span>GEF-8 Kenya GWP | OFP Reporting</span>
+    </div>
+
+    <header class="gov-header">
+      <div class="emblem-title">Republic of Kenya</div>
+      <div class="ministry-title">Ministry of Tourism and Wildlife</div>
+      <div class="dept-title">State Department for Wildlife (SDW)</div>
+      <h1 class="report-main-title">GEF 8 Q1 PROGRESS REPORT</h1>
+      <p class="report-subtitle">OPERATIONAL FOCAL POINT (OFP) — FY27 Q1 (1 July – 30 September 2026)</p>
+    </header>
+
+    <div class="gov-toolbar">
+      <span>📋 <strong>Official Government M&E Progress Report</strong> (GEF ID: 11153)</span>
+      <div>
+        <button class="btn" onclick="window.print()">🖨️ Print / Save Document</button>
+        <a class="btn btn-secondary" href="javascript:window.history.back()">← Return to Portfolio</a>
+      </div>
+    </div>
+
+    <main class="gov-body">
+      <h2 class="section-title">1. Project Information</h2>
+      <table class="info-table">
+        <tr>
+          <th>Project Title</th>
+          <td><strong>Advancing Human-Wildlife Conflict Management Effectiveness in Kenya through an Integrated Approach</strong></td>
+        </tr>
+        <tr>
+          <th>GEF Cycle & ID</th>
+          <td>GEF-8 · GEF ID: <strong>11153</strong></td>
+        </tr>
+        <tr>
+          <th>Implementing Agency</th>
+          <td>Conservation International (CI)</td>
+        </tr>
+        <tr>
+          <th>Executing Entity</th>
+          <td>Ministry of Tourism and Wildlife – State Department for Wildlife (SDW)</td>
+        </tr>
+        <tr>
+          <th>Implementing Partners</th>
+          <td>Kenya Wildlife Service (KWS); Wildlife Research and Training Institute (WRTI); Kenya Wildlife Conservancies Association (KWCA); Laikipia Conservancies Association (LCA); Taita Taveta Wildlife Conservancies Association (TTWCA)</td>
+        </tr>
+        <tr>
+          <th>Reporting Period</th>
+          <td>FY27 Q1 (1 July – 30 September 2026) · Project Span: June 2026 – September 2030</td>
+        </tr>
+        <tr>
+          <th>Project Landscapes</th>
+          <td>Kenya: Laikipia, Meru and Taita Taveta (Tsavo) Landscapes</td>
+        </tr>
+        <tr>
+          <th>Financing Framework</th>
+          <td><strong>GEF Grant:</strong> US$9,585,932 · <strong>Co-financing:</strong> US$54,427,345 (Total Portfolio: US$64,013,277)</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">2. Executive M&E Summary</h2>
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-val"><span class="badge-amber">AMBER</span></div>
+          <div class="stat-lbl">Implementation Status (Early Stage)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">$9.58M</div>
+          <div class="stat-lbl">Direct GEF-8 Grant Mobilized</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">3 Landscapes</div>
+          <div class="stat-lbl">Laikipia, Tsavo & Meru Focus</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val">36.8%</div>
+          <div class="stat-lbl">Female Stakeholder Inclusion (Target: 30%)</div>
+        </div>
+      </div>
+
+      <p style="margin-bottom: 16px;">
+        <strong>Key Achievements in Q1:</strong> Technical, operational, and site assessments completed for the EarthRanger Command Center and sub-centers across Laikipia, Tsavo, and Meru. Multi-stakeholder HWC data-review workshops convened with 57 participants; Project Steering Committee (PSC) constituted with official appointment letters issued; and dedicated Project Management Unit (PMU) operationalized.
+      </p>
+
+      <h2 class="section-title">3. Component Performance & Tracking Matrix</h2>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Component & Projected Output</th>
+            <th>Planned Activity</th>
+            <th>Target / Performance Indicator</th>
+            <th>Q1 Achievement & Evidence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>C1 – EarthRanger Command Center</strong></td>
+            <td>Complete technical, operational, and site assessments</td>
+            <td>1 Command center + 2 sub-centers</td>
+            <td>Assessments completed across Laikipia, Tsavo, Meru. Rumuruti & Nanyuki site ready.</td>
+            <td><span class="status-tag status-on-track">On Track</span></td>
+          </tr>
+          <tr>
+            <td><strong>C1 – Technology & Radio Networks</strong></td>
+            <td>Technology needs assessment & procurement prep</td>
+            <td>Meru NP + 6 OECMs equipped with LoRa & digital radios</td>
+            <td>Needs assessment complete; procurement packages submitted for CI concurrence.</td>
+            <td><span class="status-tag status-in-progress">In Progress</span></td>
+          </tr>
+          <tr>
+            <td><strong>C1 – HWC Action Plans & Hotspots</strong></td>
+            <td>Data review & HEC deterrent equipment needs assessment</td>
+            <td>At least 3 action plans; ≥30% women participation</td>
+            <td>LCA HWC review workshop (57 stakeholders); TTWCA equipment needs assessment (13 participants).</td>
+            <td><span class="status-tag status-in-progress">In Progress</span></td>
+          </tr>
+          <tr>
+            <td><strong>C1 – Naibunga Wildlife Corridor</strong></td>
+            <td>Prepare corridor ecological survey RFP</td>
+            <td>47,700 ha corridor secured through community fencing</td>
+            <td>RFP drafted and circulated to key partners for review.</td>
+            <td><span class="status-tag status-pending">Under Review</span></td>
+          </tr>
+          <tr>
+            <td><strong>C3 – Small Grants & Livelihoods</strong></td>
+            <td>Agree criteria & develop RFP under Kenya Conservancies Fund</td>
+            <td>15 community conservancies & groups strengthened</td>
+            <td>Selection criteria finalized for 15 conservancies across 2 cohorts.</td>
+            <td><span class="status-tag status-in-progress">In Progress</span></td>
+          </tr>
+          <tr>
+            <td><strong>C4 – Knowledge & Communications</strong></td>
+            <td>Constitute PSC & initiate learning products</td>
+            <td>Knowledge strategy + GWP conference submission</td>
+            <td>Project submission for 2026 GWP Annual Conference in Lombok, Indonesia finalized.</td>
+            <td><span class="status-tag status-on-track">Completed</span></td>
+          </tr>
+          <tr>
+            <td><strong>C5 – Monitoring & Evaluation (M&E)</strong></td>
+            <td>Quarterly project progress & financial reporting</td>
+            <td>5 Annual PIRs + Periodic M&E Reports to CI-GEF</td>
+            <td>2 progress reports shared; results monitoring framework active.</td>
+            <td><span class="status-tag status-on-track">Ongoing</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="section-title">4. Stakeholder Participation & Gender Mainstreaming</h2>
+      <table class="info-table">
+        <tr>
+          <th>Total Engaged in Q1</th>
+          <td><strong>133 community & institutional participants</strong> across HWC review workshops, site assessments, and community consultations.</td>
+        </tr>
+        <tr>
+          <th>Men / Women Ratio</th>
+          <td><strong>Men:</strong> 84 (63.2%) · <strong>Women:</strong> 49 (36.8%) — Exceeds the national 30% gender inclusion benchmark.</td>
+        </tr>
+        <tr>
+          <th>Youth Representation</th>
+          <td><strong>13 youth leaders</strong> directly engaged in community conservation sessions.</td>
+        </tr>
+        <tr>
+          <th>Participating Institutions</th>
+          <td>State Department for Wildlife (SDW), KWS, WRTI, KWCA, LCA, TTWCA, NEMA, WRA, NGAO, University of Nairobi, Save the Elephants, Space for Giants, and Wyss Academy for Nature.</td>
+        </tr>
+      </table>
+    </main>
+
+    <footer class="gov-footer">
+      <div>Prepared for: <strong>GEF Operational Focal Point – Kenya</strong></div>
+      <div>Ministry of Tourism and Wildlife · State Department for Wildlife | Nairobi, Kenya</div>
+    </footer>
+  </div>
+</body>
+</html>

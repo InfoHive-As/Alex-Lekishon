@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCA Annual Report 2024 — Laikipia Conservancies Association</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #065f46;
+      --primary-light: #ecfdf5;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --accent: #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg-alt);
+      line-height: 1.65;
+      padding: 30px 16px;
+    }
+    .report-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .report-header {
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 60%, #059669 100%);
+      color: white;
+      padding: 48px 40px;
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .report-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .report-subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 650px;
+      font-weight: 400;
+    }
+    .meta-bar {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+    .meta-item strong { display: block; font-size: 0.78rem; text-transform: uppercase; opacity: 0.75; }
+    .action-bar {
+      background: var(--primary-light);
+      padding: 14px 40px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .action-btn:hover { background: var(--primary-dark); }
+    .action-btn.secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .action-btn.secondary:hover { background: #f1f5f9; }
+    .report-body { padding: 40px; }
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      color: var(--primary-dark);
+      margin: 32px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2:first-of-type { margin-top: 0; }
+    p { margin-bottom: 16px; color: var(--text-muted); font-size: 1rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .stat-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border-top: 4px solid var(--primary);
+    }
+    .stat-value {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+    .callout {
+      background: #f0fdf4;
+      border-left: 4px solid var(--primary);
+      padding: 18px 22px;
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+    }
+    .callout-title { font-weight: 700; color: var(--primary-dark); margin-bottom: 6px; font-size: 1rem; }
+    .pillars-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    .pillar-item {
+      background: var(--bg-alt);
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .pillar-item strong { display: block; color: var(--text); font-size: 0.95rem; margin-bottom: 4px; }
+    .pillar-item span { font-size: 0.88rem; color: var(--text-muted); }
+    .footer-note {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .report-header, .report-body { padding: 24px 20px; }
+      .pillars-list { grid-template-columns: 1fr; }
+      .report-title { font-size: 1.7rem; }
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .report-container { box-shadow: none; border: none; }
+      .action-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-container">
+    <header class="report-header">
+      <span class="badge">Official Publication · Annual Report</span>
+      <h1 class="report-title">Laikipia Conservancies Association (LCA)</h1>
+      <p class="report-subtitle">Annual Report 2024: Scaling Conservation Impact, Climate Adaptation & Community Stewardship</p>
+      <div class="meta-bar">
+        <div class="meta-item"><strong>Reporting Period</strong>2024 Calendar Year</div>
+        <div class="meta-item"><strong>Coverage</strong>32 Member Conservancies</div>
+        <div class="meta-item"><strong>Lead Editorial & Comm's</strong>Alex Lekishon, MA</div>
+        <div class="meta-item"><strong>Executive Director</strong>Peter Matunge, CEO</div>
+      </div>
+    </header>
+
+    <div class="action-bar">
+      <span>📄 <strong>LCA_Annual_Report_2024.pdf</strong> (3.8 MB · Complete Digital Edition)</span>
+      <div>
+        <button class="action-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <a class="action-btn secondary" href="javascript:window.history.back()">← Return to Portfolio</a>
+      </div>
+    </div>
+
+    <main class="report-body">
+      <h2>Executive Summary</h2>
+      <p>The 2024 Annual Report provides an in-depth review of the Laikipia Conservancies Association's programmatic achievements, financial sustainability, and landscape governance across more than 2.5 million acres in northern Kenya. Despite regional climate pressures, LCA and its member conservancies demonstrated historic resilience in rangeland management, human-wildlife conflict mitigation, and community livelihood enhancement.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">32+</div>
+          <div class="stat-label">Member Conservancies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">$5.2M+</div>
+          <div class="stat-label">Mobilized Proposals (GEF, USAID)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">60%+</div>
+          <div class="stat-label">Audience Growth & Web Reach</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1,400+</div>
+          <div class="stat-label">Community Rangers Trained</div>
+        </div>
+      </div>
+
+      <h2>Strategic Pillars & Outcomes</h2>
+      <ul class="pillars-list">
+        <li class="pillar-item">
+          <strong>1. Landscape Rangeland Restoration</strong>
+          <span>Rehabilitated over 45,000 hectares of degraded grasslands through planned holistic rotational grazing.</span>
+        </li>
+        <li class="pillar-item">
+          <strong>2. Strategic Grants & Mobilization</strong>
+          <span>Secured critical multi-year funding streams with GEF-8 ($3M) and GBFF ($2M) in collaboration with global conservation partners.</span>
+        </li>
+        <li class="pillar-item">
+          <strong>3. MEL & Indicator Dashboards</strong>
+          <span>Institutionalized unified monitoring protocols across member conservancies, establishing real-time wildlife tracking.</span>
+        </li>
+        <li class="pillar-item">
+          <strong>4. Communications & Advocacy</strong>
+          <span>Produced 20+ newsletters, donor briefs, and national policy engagements under communications leadership of Alex Lekishon.</span>
+        </li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">Communications & Grants Leadership Highlights (Alex Lekishon)</div>
+        <p style="margin: 0; font-size: 0.94rem;">"Under the strategic stewardship of Alex Lekishon, LCA completely redesigned its digital presence, launched a high-engagement monthly newsletter series, and packaged key technical project outcomes into compelling donor narratives that were instrumental in securing major bilateral funding awards." — <em>LCA Board of Trustees</em></p>
+      </div>
+
+      <h2>Looking Ahead to 2025 – 2026</h2>
+      <p>As we transition into the next funding cycle, LCA remains focused on scaling community conservancy enterprise models, expanding ecological corridors connecting Laikipia and Samburu, and institutionalizing climate-resilient rangeland policies at both county and national levels.</p>
+
+      <div class="footer-note">
+        © 2024 Laikipia Conservancies Association (LCA). All rights reserved. Document produced and distributed for donors, member conservancies, and public conservation stakeholders.
+      </div>
+    </main>
+  </div>
+</body>
+</html>
