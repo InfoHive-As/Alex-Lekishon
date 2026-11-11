@@ -3,12 +3,12 @@ import { Sun, Moon, Menu, X, Leaf } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 const navItems = [
-  { label: 'Work Portfolio', href: '#dossier' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
-  { label: 'Publications', href: '#initiatives' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Certifications', href: '#certifications' },
+  { label: 'Initiatives', href: '#initiatives' },
   { label: 'Contact', href: '#contact' },
 ];
 

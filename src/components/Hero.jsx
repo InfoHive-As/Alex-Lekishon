@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Globe, Copy, MapPin, Award } from 'lucide-react';
+import { Mail, Linkedin, Globe, Copy, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero({ onCopyEmail }) {
@@ -16,19 +16,7 @@ export default function Hero({ onCopyEmail }) {
       <p className="hero-tagline">{personalInfo.tagline}</p>
 
       <div className="cta-row">
-        <a className="btn primary" href="#dossier">
-          <Award size={16} /> View Selected Work Portfolio
-        </a>
-        <a
-          className="btn"
-          href="/reports/Alex_Lekishon_Portfolio_Submission.pdf"
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Award size={16} /> Download Official PDF (2 Pages)
-        </a>
-        <a className="btn" href={`mailto:${personalInfo.email}`}>
+        <a className="btn primary" href={`mailto:${personalInfo.email}`}>
           <Mail size={16} /> Email me
         </a>
         <a
@@ -47,6 +35,13 @@ export default function Hero({ onCopyEmail }) {
         >
           <Globe size={16} /> {personalInfo.consultancyName}
         </a>
+        <button
+          className="btn"
+          onClick={() => onCopyEmail(personalInfo.email)}
+          type="button"
+        >
+          <Copy size={16} /> Copy Email
+        </button>
       </div>
     </section>
   );
