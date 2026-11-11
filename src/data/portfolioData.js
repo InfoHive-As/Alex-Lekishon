@@ -147,7 +147,7 @@ export const educationData = [
     institution: "Mount Kenya University (MKU) Nairobi Campus",
     period: "2017–2019",
     status: "Distinction",
-    details: "Foundational training in journalism, print & broadcast media, and corporate communications."
+    details: "Foundational training in journalism, digital & broadcast media, and corporate communications."
   }
 ];
 

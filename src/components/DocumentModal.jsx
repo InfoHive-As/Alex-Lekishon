@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   Info,
   ArrowLeft,
-  Printer,
   Sparkles,
   UploadCloud
 } from 'lucide-react';
