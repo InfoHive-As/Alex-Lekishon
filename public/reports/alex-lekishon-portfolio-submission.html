@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Lekishon — Professional Work Portfolio Submission</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #065f46;
+      --primary-light: #ecfdf5;
+      --teal: #0d9488;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #cbd5e1;
+      --border-dark: #334155;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      color: var(--text);
+      background: #e2e8f0;
+      line-height: 1.5;
+      padding: 30px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .toolbar {
+      max-width: 960px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .toolbar-title {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+    }
+
+    .print-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .print-btn:hover { background: var(--primary-dark); }
+
+    /* A4 Document Pages */
+    .doc-page {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 24px;
+      background: white;
+      padding: 44px 48px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    /* Running Header */
+    .running-header {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #0d9488;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+
+    .doc-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .doc-link-line {
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+    .doc-link-line strong { color: #0d9488; }
+    .doc-link-line a {
+      color: #0284c7;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .category-pills-bar {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #0d9488;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .author-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .author-tagline {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    /* 3 Stats Boxes */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f766e;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    /* Section Header */
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .intro-paragraph {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    /* Table Layout Matching Screenshot */
+    .portfolio-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-table th {
+      background: #0f172a;
+      color: white;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      border: 1px solid #1e293b;
+    }
+
+    .portfolio-table td {
+      border: 1px solid #cbd5e1;
+      padding: 12px;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .col-ref {
+      width: 15%;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .col-ref span.num {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      color: #0d9488;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .col-sample {
+      width: 25%;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .col-sample ul {
+      margin-left: 16px;
+      margin-top: 4px;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .col-sample li { margin-bottom: 4px; }
+
+    .col-purpose {
+      width: 25%;
+      color: var(--text-muted);
+    }
+    .col-purpose strong { color: #0f172a; }
+
+    .col-contrib {
+      width: 20%;
+      color: var(--text-muted);
+    }
+    .col-contrib strong { color: #065f46; }
+
+    .col-link {
+      width: 15%;
+      font-size: 0.82rem;
+    }
+    .col-link a {
+      color: #0284c7;
+      text-decoration: underline;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+
+    .running-footer {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .toolbar { display: none; }
+      .doc-page {
+        box-shadow: none;
+        border-radius: 0;
+        padding: 24px 20px;
+        margin: 0;
+        page-break-after: always;
+      }
+      .portfolio-table th {
+        background: #0f172a !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .stat-card {
+        background: #f0fdfa !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <div class="toolbar-title">📄 Alex Lekishon — Professional Work Portfolio Dossier</div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+  </div>
+
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="doc-page">
+    <div class="running-header">
+      ALEX LEKISHON / COMMUNICATIONS • REPORTING • CONSERVATION
+    </div>
+
+    <div class="doc-main-title">ALEX LEKISHON PROFESSIONAL PORTFOLIO</div>
+    <div class="doc-link-line">
+      <strong>Link:</strong> <a href="https://alex-ololoso.vercel.app/" target="_blank">Alex Lekishon — Communications, PR & Grants Portfolio (Live Platform)</a>
+    </div>
+
+    <div class="category-pills-bar">
+      COMMUNICATIONS | REPORTING | CONSERVATION
+    </div>
+
+    <h1 class="author-name">ALEX LEKISHON, MA</h1>
+    <p class="author-tagline">
+      Strategic communications, conservation storytelling, donor reporting, digital engagement and executive stakeholder relations across Kenya's wildlife and community rangelands.
+    </p>
+
+    <!-- 3 Stat Boxes -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">5+ years</div>
+        <div class="stat-desc">Communications & conservation experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">32+</div>
+        <div class="stat-desc">Member conservancies supported across Laikipia & Mara</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$5M+</div>
+        <div class="stat-desc">Donor funding mobilized (GEF-8, GBFF, USAID, TNC)</div>
+      </div>
+    </div>
+
+    <div class="section-title">SELECTED WORK PORTFOLIO</div>
+    <div class="section-subtitle">Communications | Reporting | Design | Conservation Storytelling</div>
+    <p class="intro-paragraph">
+      The selected examples below demonstrate my written communications, reporting, visual communication, and digital storytelling work across conservation and community development. Each entry identifies the purpose, audience, my contribution, and verified supporting evidence.
+    </p>
+
+    <table class="portfolio-table">
+      <thead>
+        <tr>
+          <th>REF. / AREA</th>
+          <th>WORK SAMPLE</th>
+          <th>PURPOSE & INTENDED AUDIENCE</th>
+          <th>MY CONTRIBUTION</th>
+          <th>EVIDENCE / LINK</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ROW 01 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">01</span>
+            Written communications & storytelling
+          </td>
+          <td class="col-sample">
+            <strong>LCA Quarterly Conservation Newsletters & Published Field Stories</strong>
+            <ul>
+              <li>LCA Quarterly Conservation Newsletter (Issue 14)</li>
+              <li>LCA Ecological Monitoring During the Month of March</li>
+              <li>MMWCA Cultural Features (Emanyata Oolorikan)</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To translate technical conservation telemetry, pasture recovery, and cultural heritage into accessible, human-interest narratives.<br><br>
+            <strong>Audience:</strong> 32+ member conservancies, pastoralist communities, conservation donors, partners, and public audiences.
+          </td>
+          <td class="col-contrib">
+            <strong>Lead Writer & Editor (Personally Created):</strong><br>
+            Conducted field interviews with rangers in Il Ngwesi, authored articles, curated photo assets, and published digital editions via Wix ShoutOut.
+          </td>
+          <td class="col-link">
+            <a href="https://shoutout.wix.com/so/48OxcupJs?languageTag=en" target="_blank">LCA Newsletter 2024 →</a><br>
+            <a href="https://www.laikipiaconservancies.org/post/lca-ecological-monitoring-during-the-month-of-march" target="_blank">Ecological Monitoring Story →</a>
+          </td>
+        </tr>
+
+        <!-- ROW 02 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">02</span>
+            Donor & organisational reporting
+          </td>
+          <td class="col-sample">
+            <strong>LCA Annual Reports & Government M&E Submissions</strong>
+            <ul>
+              <li>LCA 2025 Annual Report</li>
+              <li>LCA 2024 Annual Report</li>
+              <li>State Department for Wildlife: GEF-8 Q1 OFP Progress Report</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To communicate organisational progress, rangeland management milestones, and fiduciary compliance under major multi-million dollar donor funding programs ($9.58M GEF-8 grant + $54.4M co-finance).<br><br>
+            <strong>Audience:</strong> LCA Board of Trustees, Ministry of Tourism & Wildlife, GEF Operational Focal Point, and USAID/TNC.
+          </td>
+          <td class="col-contrib">
+            <strong>Reporting Lead (Personally Drafted & Coordinated):</strong><br>
+            Synthesized multi-landscape M&E indicators, drafted executive chapters, compiled performance reporting matrices, and directed graphic layout reviews.
+          </td>
+          <td class="col-link">
+            <a href="https://www.laikipiaconservancies.org/lca-2025-annual-report" target="_blank">LCA 2025 Annual Report →</a><br>
+            <a href="https://www.laikipiaconservancies.org/so/79PNxfXk8?languageTag=en" target="_blank">LCA 2024 Annual Report →</a><br>
+            <a href="https://alex-ololoso.vercel.app/reports/GEF-8_OFP_Progress_Report_FY27Q1.pdf" target="_blank">GEF-8 Progress Report (PDF) →</a>
+          </td>
+        </tr>
+
+        <!-- ROW 03 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">03</span>
+            Programme reporting
+          </td>
+          <td class="col-sample">
+            <strong>Oliveseed Foundation Community Needs Assessment Final Report</strong>
+            <ul>
+              <li>Complete 71-Page Baseline Evaluation Document</li>
+              <li>CI-GEF Project Annual Workplan (FY27 Q1)</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To present empirical field assessment findings and operational workplans for evidence-based decision-making and project execution.<br><br>
+            <strong>Audience:</strong> Oliveseed Foundation US Board, community elders, women's groups, and CI-GEF Project Management Unit (PMU).
+          </td>
+          <td class="col-contrib">
+            <strong>Lead Research Consultant & Author (Personally Created):</strong><br>
+            Designed participatory appraisal methodologies, conducted 24 key informant interviews (KIIs) and 6 focus group discussions (FGDs), analyzed baseline socio-economic data, and authored the full 71-page evaluation report.
+          </td>
+          <td class="col-link">
+            <a href="https://docs.google.com/document/d/1my4pZUJ75U41cM5neogJZvKHpX5dzk6a/edit?usp=sharing&ouid=109810313526103633968&rtpof=true&sd=true" target="_blank">Oliveseed Google Doc (71 Pages) →</a><br>
+            <a href="https://alex-ololoso.vercel.app/reports/Oliveseed_Community_Needs_Assessment_Report.pdf" target="_blank">Full Report PDF (2.95 MB) →</a>
+          </td>
+        </tr>
+
+        <!-- ROW 04 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">04</span>
+            PowerPoint & visual communications
+          </td>
+          <td class="col-sample">
+            <strong>GEF-8 Stakeholder Inception Decks & Conservancy Governance Briefings</strong>
+            <ul>
+              <li>EarthRanger Telemetry Setup Decks</li>
+              <li>Board & Partner Presentation Decks</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To translate technical wildlife monitoring telemetry, EarthRanger command center architecture, and complex funding frameworks into visually clear, branded presentation decks for stakeholder validation.<br><br>
+            <strong>Audience:</strong> Ministry officials, KWS, conservancy board chairs, community representatives, and international donor delegations.
+          </td>
+          <td class="col-contrib">
+            <strong>Visual Designer & Strategist (Personally Created):</strong><br>
+            Structured narrative storyboards, transformed telemetry data into custom visual infographics and indicator scorecards, and formatted slide typography and iconography.
+          </td>
+          <td class="col-link">
+            <a href="https://alex-ololoso.vercel.app/#initiatives" target="_blank">Interactive Presentation Modules →</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="running-footer">
+      ALEX LEKISHON | COMMUNICATIONS & REPORTING PORTFOLIO · PAGE 1
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="doc-page">
+    <div class="running-header">
+      ALEX LEKISHON / COMMUNICATIONS • REPORTING • CONSERVATION
+    </div>
+
+    <table class="portfolio-table">
+      <thead>
+        <tr>
+          <th>REF. / AREA</th>
+          <th>WORK SAMPLE</th>
+          <th>PURPOSE & INTENDED AUDIENCE</th>
+          <th>MY CONTRIBUTION</th>
+          <th>EVIDENCE / LINK</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ROW 05 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">05</span>
+            Digital communications & campaigns
+          </td>
+          <td class="col-sample">
+            <strong>GEF-8 Global Wildlife Program (GWP) Multi-Channel Digital Launch</strong>
+            <ul>
+              <li>Kenya Child Project Feature</li>
+              <li>LCA Conservation Social Media & Ranger Spotlight Campaigns</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To elevate the visibility of conservation grant milestones, mobilize public awareness, and deepen online community engagement (&gt;60% audience growth across 32+ member conservancies).<br><br>
+            <strong>Audience:</strong> Global conservation networks, youth advocates, eco-tourism stakeholders, and the Kenyan public.
+          </td>
+          <td class="col-contrib">
+            <strong>Digital Campaign Lead (Personally Created & Supervised):</strong><br>
+            Formulated campaign messaging pillars, authored digital features and social media copy, directed creative assets, and monitored engagement analytics.
+          </td>
+          <td class="col-link">
+            <a href="https://www.laikipiaconservancies.org/post/gef-8-global-wildlife-program-gwp-kenya-child-project" target="_blank">GEF-8 Project Feature →</a><br>
+            <a href="https://alex-ololoso.vercel.app/" target="_blank">Campaign Modules →</a>
+          </td>
+        </tr>
+
+        <!-- ROW 06 -->
+        <tr>
+          <td class="col-ref">
+            <span class="num">06</span>
+            Website & digital presence
+          </td>
+          <td class="col-sample">
+            <strong>LCA Web Portal Overhaul & Personal Professional Portfolio Platform</strong>
+            <ul>
+              <li>LCA Official Web Platform (Wix/CMS)</li>
+              <li>Alex Lekishon Interactive Web Portfolio</li>
+            </ul>
+          </td>
+          <td class="col-purpose">
+            To create a responsive, modern digital platform ensuring institutional reports, newsletters, and programmatic achievements are discoverable and interactive for external audiences.<br><br>
+            <strong>Audience:</strong> Donors, conservation partners, researchers, media, and hiring committees.
+          </td>
+          <td class="col-contrib">
+            <strong>Content Strategist & Web Lead (Personally Created & Managed):</strong><br>
+            Structured information architecture, curated report attachment workflows, drafted copy, and deployed modern interactive web portfolio with in-app document readers.
+          </td>
+          <td class="col-link">
+            <a href="https://www.laikipiaconservancies.org" target="_blank">LCA Website →</a><br>
+            <a href="https://alex-ololoso.vercel.app/" target="_blank">Personal Portfolio: https://alex-ololoso.vercel.app/ →</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 8px; padding: 18px 24px; margin-top: 24px; text-align: center;">
+      <strong style="color: #0f766e; font-size: 1rem; display: block; margin-bottom: 4px;">Direct Portfolio Platform Verification:</strong>
+      <span style="font-size: 0.9rem; color: #475569;">
+        Access all full multi-page PDF documents, in-app readers, and interactive presentations online at:
+      </span><br>
+      <a href="https://alex-ololoso.vercel.app/" target="_blank" style="font-weight: 800; font-size: 1.05rem; color: #0284c7; text-decoration: underline; margin-top: 6px; display: inline-block;">
+        https://alex-ololoso.vercel.app/
+      </a>
+    </div>
+
+    <div class="running-footer">
+      ALEX LEKISHON | COMMUNICATIONS & REPORTING PORTFOLIO · PAGE 2
+    </div>
+  </div>
+
+</body>
+</html>
