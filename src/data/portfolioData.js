@@ -249,7 +249,7 @@ export const initiativesData = [
     badge: "Ministry of Wildlife",
     badgeType: "live",
     description: "Coordinating strategic communications, M&E frameworks, donor reporting, and policy documentation for the State Department for Wildlife on the multi-million dollar GEF-8 Human-Wildlife Conflict Management project.",
-    stack: ["MEL Frameworks", "GEF-8 ($64M+)", "Policy Briefs", "EarthRanger & Dashboards"],
+    stack: ["MEL Frameworks", "GEF-8 ($64M+)", "Policy Briefs", "Conservation Dashboards"],
     link: null,
     attachments: [
       {
@@ -273,10 +273,10 @@ export const initiativesData = [
         format: "Official PDF (57 Pages)",
         size: "2.4 MB",
         featured: true,
-        summary: "Complete 57-page multi-agency results workplan (SDW, KWS, KWCA, WRTI) detailing EarthRanger command centers, zoonotic surveillance, gender mainstreaming, and safeguards compliance.",
+        summary: "Complete 57-page multi-agency results workplan (SDW, KWS, KWCA, WRTI) detailing multi-landscape command centers, zoonotic surveillance, gender mainstreaming, and safeguards compliance.",
         fileUrl: "/reports/CI-GEF_Project_Annual_Workplan_FY27Q1.pdf",
         downloadUrl: "/reports/CI-GEF_Project_Annual_Workplan_FY27Q1.pdf",
-        tags: ["CI-GEF", "Annual Workplan", "EarthRanger", "Safeguards"]
+        tags: ["CI-GEF", "Annual Workplan", "MEL Framework", "Safeguards"]
       }
     ]
   },
